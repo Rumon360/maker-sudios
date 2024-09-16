@@ -28,14 +28,14 @@ const SliderSection = () => {
           ></motion.div>
         </div>
       </div>
-      <div className="h-screen sticky top-[5%] w-full overflow-hidden">
+      <div className="h-screen sticky top-0 w-full overflow-hidden">
         <div className="h-full flex flex-col justify-between">
           <div className="max-w-[95%] w-full flex items-center justify-between mx-auto">
             <div className="hidden md:block w-full">
-              <AnimationText className="text-[6vw] font-medium  leading-[1.1]">
+              <AnimationText className="text-[5vw] font-medium  leading-[1.1]">
                 Beyond logos &
               </AnimationText>
-              <AnimationText className="text-[6vw] font-medium leading-[1.1]">
+              <AnimationText className="text-[5vw] font-medium leading-[1.1]">
                 creative websites
               </AnimationText>
             </div>
@@ -44,7 +44,7 @@ const SliderSection = () => {
             </AnimationText>
             <MovingBall
               text="Start a Project"
-              className="hidden md:flex text-xl size-[200px] lg:size-[250px] bg-pink-200"
+              className="hidden md:flex text-xl size-[200px] bg-pink-200"
             />
           </div>
           <motion.div

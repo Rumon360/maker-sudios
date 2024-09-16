@@ -10,7 +10,6 @@ import SliderSection from "./components/sections/slider";
 import ClientsSection from "./components/sections/clients";
 import Footer from "./components/sections/footer";
 import Marquee from "./components/ui/marquee";
-import Loader from "./components/ui/loader";
 
 function App() {
   const { setTheme } = useTheme();
@@ -20,7 +19,10 @@ function App() {
   const footerIsInView = useInView(footerRef, { margin: "0% 0% -96% 0%" });
 
   const [showCredit, setShowCredit] = useState(false);
-  const [isLoading, setIsLoading] = useState(true); // Track loading state
+
+  if (isInView) {
+    setTheme("light");
+  }
 
   useEffect(() => {
     if (footerIsInView) {
@@ -32,63 +34,22 @@ function App() {
     }
   }, [footerIsInView, isInView, setTheme]);
 
-  useEffect(() => {
-    const handleMediaLoad = () => {
-      const images = Array.from(document.images);
-      const videos = Array.from(document.querySelectorAll("video"));
-
-      const mediaPromises: Promise<void>[] = [
-        ...images.map((img) => {
-          return new Promise<void>((resolve) => {
-            if (img.complete) {
-              resolve();
-            } else {
-              img.addEventListener("load", () => resolve());
-              img.addEventListener("error", () => resolve());
-            }
-          });
-        }),
-        ...videos.map((video) => {
-          return new Promise<void>((resolve) => {
-            if (video.readyState === 4) {
-              resolve();
-            } else {
-              video.addEventListener("loadeddata", () => resolve());
-              video.addEventListener("error", () => resolve());
-            }
-          });
-        }),
-      ];
-
-      Promise.all(mediaPromises).then(() => {
-        setIsLoading(false);
-      });
-    };
-
-    handleMediaLoad();
-  }, []);
-
   return (
-    <>
-      {isLoading && <Loader />}
-      {!isLoading && (
-        <div className="w-full h-full px-1">
-          <Header setShowCredit={setShowCredit} />
-          <Hero />
-          <div ref={ref} className="h-full w-full mt-20 md:mt-36 relative">
-            <Information />
-            <Featured />
-          </div>
-          <SliderSection />
-          <ClientsSection />
-          <div ref={footerRef}>
-            <Footer />
-          </div>
-          <AnimatePresence>{showCredit && <Marquee />}</AnimatePresence>
-          <Cursor />
-        </div>
-      )}
-    </>
+    <div className="w-full h-full px-1.5">
+      <Header setShowCredit={setShowCredit} />
+      <Hero />
+      <div ref={ref} className="h-full w-full mt-20 md:mt-36 relative">
+        <Information />
+        <Featured />
+      </div>
+      <SliderSection />
+      <ClientsSection />
+      <div ref={footerRef}>
+        <Footer />
+      </div>
+      <AnimatePresence>{showCredit && <Marquee />}</AnimatePresence>
+      <Cursor />
+    </div>
   );
 }
 

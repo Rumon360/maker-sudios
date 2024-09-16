@@ -10,8 +10,10 @@ import SliderSection from "./components/sections/slider";
 import ClientsSection from "./components/sections/clients";
 import Footer from "./components/sections/footer";
 import Marquee from "./components/ui/marquee";
+import AnimationText from "./components/ui/animation-text";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const { setTheme } = useTheme();
   const ref = useRef(null);
   const footerRef = useRef(null);
@@ -19,6 +21,15 @@ function App() {
   const footerIsInView = useInView(footerRef, { margin: "0% 0% -96% 0%" });
 
   const [showCredit, setShowCredit] = useState(false);
+
+  const handleLoading = () => {
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("load", handleLoading);
+    return () => window.removeEventListener("load", handleLoading);
+  });
 
   useEffect(() => {
     if (footerIsInView) {
@@ -30,8 +41,15 @@ function App() {
     }
   }, [footerIsInView, isInView, setTheme]);
 
+  if (isLoading)
+    return (
+      <div className="h-screen mix-blend-difference flex justify-center items-center uppercase w-full text-6xl font-medium">
+        <AnimationText>Loading...</AnimationText>
+      </div>
+    );
+
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full px-1">
       <Header setShowCredit={setShowCredit} />
       <Hero />
       <div ref={ref} className="h-full w-full mt-20 md:mt-36 relative">

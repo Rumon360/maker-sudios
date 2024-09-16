@@ -51,7 +51,7 @@ function Content() {
                   <input
                     type="email"
                     placeholder="Your Email"
-                    className="placeholder:text-xl md:placeholder:text-3xl placeholder:text-zinc-500 flex-1 bg-transparent outline-none"
+                    className="placeholder:lg md:placeholder:text-xl lg:placeholder:text-3xl placeholder:text-zinc-500 flex-1 bg-transparent outline-none"
                   />
                   <button className="group px-6 py-1 rounded-full border border-black overflow-hidden relative bg-transparent text-sm md:text-lg capitalize flex justify-center items-center">
                     <span>View clients</span>

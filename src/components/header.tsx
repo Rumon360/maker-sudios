@@ -63,7 +63,7 @@ function Header({
             <li key={navLink.id} className="">
               <a
                 href="#"
-                className={cn("relative font-medium text-xl", {
+                className={cn("relative font-medium text-base", {
                   "after:absolute after:left-0 after:h-[0.8px] after:bg-primary after:w-full after:bottom-0":
                     navLink.active,
                 })}

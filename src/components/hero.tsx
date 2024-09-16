@@ -56,7 +56,7 @@ function Hero() {
       ref={containerRef}
       className="h-[200vh] md:h-[250vh] w-full relative max-w-full md:max-w-[95%] mx-auto"
     >
-      <div className="md:h-[calc(100vh-4.5rem)] pt-16 md:pt-0 sticky top-0 w-full flex justify-center items-center">
+      <div className="md:h-[calc(100vh-6rem)] pt-16 md:pt-0 sticky top-0 w-full flex justify-center items-center">
         <div className="space-y-8 md:space-y-16">
           <div>
             <AnimationText

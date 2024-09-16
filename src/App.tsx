@@ -33,13 +33,39 @@ function App() {
   }, [footerIsInView, isInView, setTheme]);
 
   useEffect(() => {
-    const handleLoad = () => setIsLoading(false);
+    const handleMediaLoad = () => {
+      const images = Array.from(document.images);
+      const videos = Array.from(document.querySelectorAll("video"));
 
-    window.addEventListener("load", handleLoad);
+      const mediaPromises: Promise<void>[] = [
+        ...images.map((img) => {
+          return new Promise<void>((resolve) => {
+            if (img.complete) {
+              resolve();
+            } else {
+              img.addEventListener("load", () => resolve());
+              img.addEventListener("error", () => resolve());
+            }
+          });
+        }),
+        ...videos.map((video) => {
+          return new Promise<void>((resolve) => {
+            if (video.readyState === 4) {
+              resolve();
+            } else {
+              video.addEventListener("loadeddata", () => resolve());
+              video.addEventListener("error", () => resolve());
+            }
+          });
+        }),
+      ];
 
-    return () => {
-      window.removeEventListener("load", handleLoad);
+      Promise.all(mediaPromises).then(() => {
+        setIsLoading(false);
+      });
     };
+
+    handleMediaLoad();
   }, []);
 
   return (

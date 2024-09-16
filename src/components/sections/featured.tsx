@@ -30,7 +30,11 @@ function Featured() {
         </div>
         <div className="md:-mt-16 w-full">
           <div className="flex gap-4 md:gap-0 w-full justify-between">
-            <div className="pt-[280px] ml-[2.5%]">
+            <div
+              onMouseEnter={handleMouseEnterHoverCursor}
+              onMouseLeave={handleMouseLeaveHoverCursor}
+              className="pt-[280px] ml-[2.5%]"
+            >
               <div className="w-[85%] h-[245px] lg:w-[460px] lg:h-[580px] overflow-hidden">
                 <motion.div
                   style={{
@@ -42,8 +46,6 @@ function Featured() {
                   viewport={{ margin: "0% 0% 0% 0%", once: true }}
                   transition={{ duration: 1, ease: "easeInOut" }}
                   className="w-full group h-full relative"
-                  onMouseEnter={handleMouseEnterHoverCursor}
-                  onMouseLeave={handleMouseLeaveHoverCursor}
                 >
                   <img
                     src="/imgs/blue-car.webp"
@@ -59,7 +61,11 @@ function Featured() {
                 </p>
               </div>
             </div>
-            <div className="mr-[1.5rem] md:mr-0">
+            <div
+              onMouseEnter={handleMouseEnterHoverCursor}
+              onMouseLeave={handleMouseLeaveHoverCursor}
+              className="mr-[1.5rem] md:mr-0"
+            >
               <div className="w-[100%] h-[245px] lg:w-[460px] lg:h-[580px] relative overflow-hidden">
                 <video
                   src="/video-one.mp4"
@@ -80,7 +86,11 @@ function Featured() {
         </div>
         <div className="w-full pt-20">
           <div className="flex gap-4 md:gap-0 w-full justify-between">
-            <div className="pt-[280px] ml-[2.5%]">
+            <div
+              onMouseEnter={handleMouseEnterHoverCursor}
+              onMouseLeave={handleMouseLeaveHoverCursor}
+              className="pt-[280px] ml-[2.5%]"
+            >
               <div className="w-[100%] h-[245px] lg:w-[460px] lg:h-[580px] relative overflow-hidden">
                 <video
                   src="/video-two.mp4"
@@ -98,7 +108,11 @@ function Featured() {
               </div>
             </div>
             <div className="flex flex-col justify-between">
-              <div className="mr-[1.5rem] md:mr-0 max-w-[85%] md:max-w-full ml-auto">
+              <div
+                onMouseEnter={handleMouseEnterHoverCursor}
+                onMouseLeave={handleMouseLeaveHoverCursor}
+                className="mr-[1.5rem] md:mr-0 max-w-[85%] md:max-w-full ml-auto"
+              >
                 <div className="w-[100%] h-[245px] lg:w-[460px] lg:h-[580px] overflow-hidden">
                   <motion.div
                     style={{

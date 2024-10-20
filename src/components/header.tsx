@@ -43,7 +43,7 @@ function Header({
 }) {
   const { cursorHeight, cursorWidth } = useMousePositionContext();
   return (
-    <header className="max-w-[95%] mx-auto w-full z-50 text-white mix-blend-difference sticky top-0 h-20 flex justify-between items-center py-4">
+    <header className="max-w-[95%] px-1.5 mx-auto w-full z-50 text-white mix-blend-difference sticky top-0 h-20 flex justify-between items-center py-4">
       <div>
         <Logo />
       </div>

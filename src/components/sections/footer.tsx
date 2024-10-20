@@ -3,10 +3,10 @@ import MovingBall from "../ui/movingball";
 
 function Footer() {
   return (
-    <div className="">
+    <div className="px-1.5 bg-[#edbfff]">
       <footer
         style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-        className="hidden md:block relative h-[100vh] bg-[#edbfff]"
+        className="hidden md:block relative h-[100vh]"
       >
         <div className="relative h-[calc(100vh+100vh)] -top-[100vh]">
           <div className="h-[100vh] sticky top-[calc(100vh-100vh)]">
@@ -39,11 +39,11 @@ function Content() {
           </div>
           <MovingBall
             text="Start a Project"
-            className="hidden md:flex text-xl size-[200px] lg:size-[250px] bg-white"
+            className="hidden md:flex text-xl size-[180px] lg:size-[200px] bg-white"
           />
         </div>
-        <div className="pt-10 md:pt-20">
-          <div className="flex flex-col lg:flex-row justify-between text-xl md:text-3xl xl:text-4xl">
+        <div className="pt-10">
+          <div className="flex flex-col lg:flex-row justify-between text-xl md:text-2xl xl:text-3xl">
             <div>
               <h3>Don't miss out. Stay in the loop.</h3>
               <div className="pt-16">
@@ -51,21 +51,21 @@ function Content() {
                   <input
                     type="email"
                     placeholder="Your Email"
-                    className="placeholder:lg md:placeholder:text-xl lg:placeholder:text-3xl placeholder:text-zinc-500 flex-1 bg-transparent outline-none"
+                    className="placeholder:lg md:placeholder:text-xl lg:placeholder:text-2xl placeholder:text-zinc-500 flex-1 bg-transparent outline-none"
                   />
-                  <button className="group px-6 py-1 rounded-full border border-black overflow-hidden relative bg-transparent text-sm md:text-lg capitalize flex justify-center items-center">
+                  <button className="group px-6 py-1 rounded-full border border-black overflow-hidden relative bg-transparent text-sm md:text-base lg:text-lg capitalize flex justify-center items-center">
                     <span>View clients</span>
                     <div className="absolute rounded-full opacity-0 group-hover:opacity-100 duration-300 group-hover:scale-100 transition ease-in-out w-full h-full origin-center scale-50 -z-10 bg-white"></div>
                   </button>
                 </div>
               </div>
             </div>
-            <div className="pt-16 sm:pt-20 md:pt-0">
+            <div className="pt-10 md:pt-0">
               <p className="">hmk.rumon@gmail.com</p>
-              <div className="flex text-xl md:text-2xl gap-20 w-full pt-10">
+              <div className="flex text-lg md:text-xl  gap-20 w-full pt-10">
                 <div>
                   <h4>Main Hubs</h4>
-                  <ul className="flex flex-col text-base md:text-lg pt-2">
+                  <ul className="flex flex-col text-sm md:text-base">
                     <li>DC</li>
                     <li>Maryland</li>
                     <li>Dhaka</li>
@@ -73,7 +73,7 @@ function Content() {
                 </div>
                 <div>
                   <h4>Socials</h4>
-                  <ul className="flex flex-col text-base md:text-lg pt-2">
+                  <ul className="flex flex-col text-sm md:text-base">
                     <li>Instagram</li>
                     <li>LinkedIn</li>
                     <li>Facebook</li>
@@ -84,7 +84,10 @@ function Content() {
           </div>
         </div>
       </div>
-      <a href="https://hmk360.vercel.app/" className="pt-10 md:pt-0 text-xl">
+      <a
+        href="https://hmk360.vercel.app/"
+        className="pt-10 md:pt-0 text-base text-slate-700"
+      >
         © 2024 HMK
       </a>
     </div>

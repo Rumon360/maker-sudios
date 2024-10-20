@@ -49,7 +49,7 @@ function ClientsSection() {
   };
 
   return (
-    <div className="py-20 lg:py-36 w-full  bg-[#0f0d0d]">
+    <div className="py-20 px-1.5 lg:py-36 w-full bg-[#0f0d0d] overflow-x-hidden">
       <div className="">
         <div className="max-w-[95%] mx-auto">
           <div className="flex justify-between items-center">

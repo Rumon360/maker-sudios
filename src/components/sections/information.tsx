@@ -9,7 +9,7 @@ function Information() {
   const [selectedImage, setSelectedImage] = useState(0);
 
   return (
-    <div className="w-full pb-20 md:pb-36">
+    <div className="w-full pb-20 px-1.5 md:pb-36">
       <div className="max-w-[95%] mx-auto">
         <span className="text-base block mb-2 font-normal capitalize md:hidden">
           Capabilities

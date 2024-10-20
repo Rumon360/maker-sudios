@@ -21,7 +21,7 @@ function Featured() {
   };
 
   return (
-    <div className="pt-10 md:pt-20 lg:pt-36 border-t border-black w-full ">
+    <div className="pt-10 px-1.5 md:pt-20 lg:pt-36 border-t border-black w-full ">
       <div className="w-full">
         <div className="max-w-[95%] mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-8xl max-w-xs lg:max-w-sm">

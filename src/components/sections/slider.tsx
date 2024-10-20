@@ -18,7 +18,7 @@ const SliderSection = () => {
       className="h-[300vh] relative w-full mt-10 md:mt-36"
     >
       <div className="pb-0 md:pb-10 lg:pb-20">
-        <div className="w-full relative h-[2px] overflow-hidden">
+        <div className="w-full relative h-[2px] overflow-x-hidden">
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}

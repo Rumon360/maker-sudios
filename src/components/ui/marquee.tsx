@@ -7,7 +7,7 @@ function Marquee() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ ease: "easeInOut" }}
-      className="h-screen w-screen flex justify-center items-center fixed z-20 inset-0 bg-pink-200"
+      className="h-screen px-1.5 w-screen flex justify-center items-center fixed z-20 inset-0 bg-pink-200"
     >
       <div className="flex w-full overflow-hidden whitespace-nowrap">
         {[1, 2, 3, 4, 5, 6].map((_, index) => (

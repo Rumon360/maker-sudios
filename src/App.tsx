@@ -35,7 +35,7 @@ function App() {
   }, [footerIsInView, isInView, setTheme]);
 
   return (
-    <div className="w-full h-full px-1.5">
+    <div className="w-full h-full">
       <Header setShowCredit={setShowCredit} />
       <Hero />
       <div ref={ref} className="h-full w-full mt-20 md:mt-36 relative">
